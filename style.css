@@ -1,0 +1,113 @@
+:root {
+    --cor-fundo: #a6fafd21;
+    --cor-celula: rgb(196, 196, 196);
+    --cor-hover: #0000009d;
+    --cor-vencedor: rgb(209, 224, 209);
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--cor-fundo);
+    text-align: center;
+    font:15px arial 
+}
+
+.tabuleiro {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    gap: 5px;
+    padding: 5px;
+    background: #00000021;
+    border-radius: 5px;
+    border: 1px solid #00000056;
+}
+
+.celula, #reiniciar {
+    display: flex;
+    background-color: var(--cor-celula);
+    padding: 5px;
+    height: 100px;
+    border: 0;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: .5s all;
+}
+
+.celula:hover, #reiniciar:hover {
+    background-color: var(--cor-hover);
+    color: white;
+}
+
+#reiniciar {
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 20px;
+    grid-column: span 3;
+    width: auto; 
+}
+
+.mystyle {
+    border-radius: 100%;
+    background-color: #fff;
+}
+
+.vencedor {
+    background-color: var(--cor-vencedor);
+    color: rgb(0, 0, 0);
+}
+
+.result {
+    display: block;
+    background: #ffffff96;
+    grid-column: span 3;
+    padding: 0;
+    border: 0;
+    font: 20px consolas;
+    text-transform: uppercase;
+    margin: 0;
+}
+
+.celula:hover {
+    transform: scale(1.1);
+    transform-origin: center;
+}
+
+.celula:focus, #reiniciar:focus {
+    outline: 2px solid #000; /* ou outra cor que contraste */
+}
+
+@media (max-width: 600px) {
+    .celula {
+        width: 80px;
+        height: 80px;
+        font-size: 24px;
+    }
+    .tabuleiro {
+        grid-template-columns: repeat(3, 80px);
+    }
+    #reiniciar {
+        height: 80px;
+    }
+}
+
+@media (max-width: 400px) {
+    .celula {
+        width: 60px;
+        height: 60px;
+        font-size: 20px;
+    }
+    .tabuleiro {
+        grid-template-columns: repeat(3, 60px);
+    }
+    #reiniciar {
+        height: 60px;
+    }
+}
